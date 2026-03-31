@@ -4,7 +4,8 @@
 Criação de API REST com Node.js, Express e Arquitetura em Camadas (ESM)
 
 ## Objetivo
-Criar uma API simples em Node.js utilizando o framework Express, aplicando separação de responsabilidades e utilizando ECMAScript Modules (ESM).
+Criar uma API simples em Node.js utilizando o framework Express, aplicando separação 
+de responsabilidades e utilizando ECMAScript Modules (ESM).
 
 ---
 
@@ -84,10 +85,10 @@ Servidor rodando na porta 3000.
 ## ENTREGA 01 — Requisitos Funcionais
 
 | ID     | Requisito           | Descrição                                                                 |
-|--------|--------------------|---------------------------------------------------------------------------|
-| RF-01  |  |  |
-| RF-02  |    |                            |
-| RF-03  |   |                      |
+|---------|--------------------|---------------------------------------------------------------------------|
+| RF-01  | Cadastro de usuários | O sistema deve permitir o cadastro de um novo usuário via POST /users com os campos name, age e isActive. |
+| RF-02  | Validação de nome obrigatório | O sistema deve lançar erro caso o campo name não seja informado na requisição. |
+| RF-03  | Validação de maioridade | O sistema deve lançar erro caso o campo age seja inferior a 18 anos. |
 
 ---
 
@@ -97,28 +98,22 @@ Servidor rodando na porta 3000.
 
 | ID Caso | ID Requisito | Descrição                                              | Precondição                  | Passos                                                                 | Resultado Esperado                                                                 |
 |---------|-------------|--------------------------------------------------------|------------------------------|------------------------------------------------------------------------|-------------------------------------------------------------------------------------|
-| CT-01   | RF-01      |     |   |    |  |
-| CT-02   | RF-02      | |  |  |  |
-| CT-03   | RF-03      |  |   |   |                            |
+| CT-01   | RF-01      |   Criar usuário com dados válidos  | Nenhuma | 1. Chamar createUser com name: "João Silva" e age: 25. 2. Verificar os campos retornados. | Objeto com name, age, isActive: true, roles: ['user'] e id definido. |
+| CT-02   | RF-02      | Lançar erro ao não informar o nome| Nenhuma | 1. Chamar createUser sem o campo name. 2. Esperar que uma exceção seja lançada. | Erro com mensagem "O nome do usuário é obrigatório." |
+| CT-03   | RF-03      | Lançar erro ao informar que a idade é menor que 18 | Nenhuma |  1. Chamar createUser com age: 16`. 2. Esperar que uma exceção seja lançada. | Erro com mensagem "O usuário deve ser maior de idade." | 
 
 ---
 
 ## 8.2 Ferramentas e Ambiente
 
-Ferramentas:
-- [ferramenta 01]
-- [ferramenta 02]
-- [ferramenta 03]
+Ferramentas de teste:
+- Jest
+- Navegador (DevTools)
+- Postman
 
-Ambiente:
-- [ambiente 01]
-- [ambiente 02]
-- [ambiente 03]
+Ambiente de teste:
+- Node.js
+- VS Code
+- Google Chrome
 
 ---
-
-## Observações
-
-- Testes unitários focados em userService
-- Cobertura de sucesso e exceções
-- Uso de toBe e toEqual
