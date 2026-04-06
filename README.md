@@ -1,124 +1,86 @@
-# PARTE 1: Trabalhando com toThrow e try/catch
+# Sistema de Cat Café
 
-## Título da Atividade
-Criação de API REST com Node.js, Express e Arquitetura em Camadas (ESM)
+**Atividade Avaliativa – Testes de Sistemas (SENAI/SC)**  
+**Aluna:** Emily de S E Afonso  
+**Objetivo:** Planejar, executar e documentar testes unitários em um sistema web contemplando front-end e back-end, utilizando a ferramenta Jest, estruturando um levantamento de requisitos, um descritivo de casos de teste, um relatório de execução de testes e a validação dos resultados, conforme normas, métodos e técnicas de testes de software adotadas pela indústria.
 
-## Objetivo
-Criar uma API simples em Node.js utilizando o framework Express, aplicando separação de responsabilidades e utilizando ECMAScript Modules (ESM).
+## Contexto
+Sistema web de Cat Café com funcionalidades de cadastro/login de usuários, listagem e adoção de gatos, cardápio com pedidos e painel administrativo. O projeto contempla front-end (React + Vite) e back-end (Express + Node.js + MySQL), com testes unitários implementados via Jest em ambas as camadas.
+
+## Stack
+| Camada | Tecnologia |
+|--------|-----------|
+| Frontend | React + Vite |
+| Backend | Node.js + Express |
+| Banco de Dados | MySQL |
+| Testes | Jest |
+
+## Estrutura do Repositório
+>
 
 ---
 
-## Instruções da Entrega
+## Requisitos Funcionais
 
-### 1. Configuração Inicial
+### Usuários
+| ID | Requisito | Descrição |
+|----|-----------|-----------|
+| RF001 | Cadastro | O sistema deve permitir que o usuário realize cadastro informando nome, email e senha |
+| RF002 | Login | O sistema deve permitir que o usuário faça login com email e senha |
+| RF003 | Edição | O sistema deve permitir que o usuário edite nome e telefone |
 
+### Gatos
+| ID | Requisito | Descrição |
+|----|-----------|-----------|
+| RF004 | Listar Gatos | O sistema deve listar todos os gatos cadastrados |
+| RF005 | Infos Gatos | O sistema deve mostrar foto, nome, idade, sexo e descrição do gato |
+| RF006 | Filtro Gatos | O sistema deve permitir filtrar gatos por idade, sexo e status de adoção |
+
+### Cardápio
+| ID | Requisito | Descrição |
+|----|-----------|-----------|
+| RF007 | Listar Produtos | O sistema deve listar produtos do cardápio (nome, preço, descrição, imagem) |
+| RF008 | Filtrar Produtos | O sistema deve permitir filtrar por categoria (cafés, doces, salgados) |
+| RF009 | Comanda | O sistema deve permitir que o usuário crie uma comanda/pedido |
+| RF010 | Pedido | O sistema deve permitir adicionar produtos na comanda |
+| RF011 | Pagamento | O sistema deve gerar o valor total da comanda para pagamento |
+
+### Adoção
+| ID | Requisito | Descrição |
+|----|-----------|-----------|
+| RF012 | Formulário de Adoção | O sistema deve permitir que o usuário envie um formulário de adoção |
+| RF013 | Status de Adoção | O sistema deve permitir que o usuário acompanhe o status da adoção |
+
+### Administração
+| ID | Requisito | Descrição |
+|----|-----------|-----------|
+| RF014 | Cadastro de Gatos | O administrador deve poder cadastrar gatos |
+| RF015 | Cadastro de Produtos | O administrador deve poder cadastrar produtos do cardápio |
+| RF016 | Dashboard | O administrador deve visualizar relatórios de adoções e vendas de produtos |
+
+---
+
+## Ferramentas e Ambiente de Teste
+
+| Item | Descrição |
+|------|-----------|
+| Ferramenta de Teste | Jest |
+| Ambiente | Desenvolvimento/local |
+| Servidor | Node.js |
+| Banco de Dados | MySQL |
+| Browser | Chrome (para testes frontend) |
+
+---
+
+## Executar os Testes
 ```bash
-npm init -y
-npm install express
+# Backend
+cd backend
+npm install
+npm test
+
+# Frontend
+cd frontend
+npm install
+npm test
 ```
-
-No package.json:
-
-```json
-"type": "module",
-"start": "node src/server.js"
-```
-
----
-
-### 2. Estrutura do Projeto
-
-```
-meu-projeto/
-├── package.json
-└── src/
-    ├── app.js
-    ├── server.js
-    └── userService.js
-```
-
----
-
-### 3. Regra de Negócio (userService.js)
-
-Função exportada: createUser(userData)
-
-Validações obrigatórias:
-
-Se não existir propriedade name:
-throw new Error("O nome do usuário é obrigatório.")
-
-Se age < 18:
-throw new Error("O usuário deve ser maior de idade.")
-
-Retorno esperado:
-
-{
-  id: gerado_aleatoriamente,
-  name: string,
-  age: number,
-  isActive: true,
-  roles: ['user']
-}
-
----
-
-### 4. Express (app.js)
-
-- app.use(express.json())
-- Criar rota POST /users
-- Retornar 201 em sucesso
-- Retornar 400 em erro com:
-{ "error": error.message }
-
----
-
-### 5. Servidor (server.js)
-
-Servidor rodando na porta 3000.
-
----
-
-# PARTE 2: Documentação
-
-## ENTREGA 01 — Requisitos Funcionais
-
-| ID     | Requisito           | Descrição                                                                 |
-|--------|--------------------|---------------------------------------------------------------------------|
-| RF-01  |  |  |
-| RF-02  |    |                            |
-| RF-03  |   |                      |
-
----
-
-# ENTREGA 08 — Descritivo de Casos de Teste
-
-## 8.1 Casos de Teste
-
-| ID Caso | ID Requisito | Descrição                                              | Precondição                  | Passos                                                                 | Resultado Esperado                                                                 |
-|---------|-------------|--------------------------------------------------------|------------------------------|------------------------------------------------------------------------|-------------------------------------------------------------------------------------|
-| CT-01   | RF-01      |     |   |    |  |
-| CT-02   | RF-02      | |  |  |  |
-| CT-03   | RF-03      |  |   |   |                            |
-
----
-
-## 8.2 Ferramentas e Ambiente
-
-Ferramentas:
-- [ferramenta 01]
-- [ferramenta 02]
-- [ferramenta 03]
-
-Ambiente:
-- [ambiente 01]
-- [ambiente 02]
-- [ambiente 03]
-
----
-
-## Observações
-
-- Testes unitários focados em userService
-- Cobertura de sucesso e exceções
-- Uso de toBe e toEqual
