@@ -1,7 +1,7 @@
 # Sistema de Cat Café
 
 **Atividade Avaliativa – Testes de Sistemas (SENAI/SC)**  
-**Aluna:** Emily de S E Afonso  
+**Aluna:** Emily Souza
 **Objetivo:** Planejar, executar e documentar testes unitários em um sistema web contemplando front-end e back-end, utilizando a ferramenta Jest, estruturando um levantamento de requisitos, um descritivo de casos de teste, um relatório de execução de testes e a validação dos resultados, conforme normas, métodos e técnicas de testes de software adotadas pela indústria.
 
 ## Contexto
