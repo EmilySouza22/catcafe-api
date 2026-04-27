@@ -16,4 +16,18 @@ Model.saveUser = async (userData) => {
 	}
 };
 
+Model.findByEmail = async (email) => {
+	const [result] = await pool.query('SELECT * FROM users WHERE email = ?', [
+		email,
+	]);
+	return result.length > 0 ? result[0] : null;
+};
+
+Model.findByPhone = async (phone) => {
+	const [result] = await pool.query('SELECT * FROM users WHERE phone = ?', [
+		phone,
+	]);
+	return result.length > 0 ? result[0] : null;
+};
+
 module.exports = Model;
