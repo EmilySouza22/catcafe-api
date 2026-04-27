@@ -1,13 +1,25 @@
-//Importando router do express
 const express = require('express');
 const router = express.Router();
 
 //controller
-const { handleCreateAccount } = require('../controllers/user.js');
+const {
+	handleGetProfile,
+	handleUpdateProfile,
+	handleDeleteAccount,
+} = require('../controllers/user.js');
 
-// TODO, adicionar os endpoints aqui
-router.post('/create', async (req, res) => {
-	await handleCreateAccount(req, res);
+// TODO: middleware de autenticação 
+
+router.get('/profile', async (req, res) => {
+	await handleGetProfile(req, res);
+});
+
+router.put('/profile', async (req, res) => {
+	await handleUpdateProfile(req, res);
+});
+
+router.delete('/profile', async (req, res) => {
+	await handleDeleteAccount(req, res);
 });
 
 module.exports = router;

@@ -1,26 +1,27 @@
-const { createAccount } = require('../components/user');
-const { validateEmail } = require('../components/validator');
-
 const Controller = {};
 
-Controller.handleCreateAccount = async (req, res) => {
-	// validações dos dados da requisição
+Controller.handleGetProfile = async (req, res) => {
+	// TODO: obtenção de perfil
+	res.status(501).json({
+		success: false,
+		message: 'Endpoint não implementado',
+	});
+};
 
-	const userData = req.body;
+Controller.handleUpdateProfile = async (req, res) => {
+	// TODO: atualização de perfil
+	res.status(501).json({
+		success: false,
+		message: 'Endpoint não implementado',
+	});
+};
 
-	try {
-		const result = await createAccount(userData);
-		return res.status(201).json({
-			success: true,
-			message: 'Account created successfully.',
-			data: result,
-		});
-	} catch (error) {
-        res.status(400).json({
-            sucess: false,
-            message: error
-        })
-    }
+Controller.handleDeleteAccount = async (req, res) => {
+	// TODO: exclusão de conta
+	res.status(501).json({
+		success: false,
+		message: 'Endpoint não implementado',
+	});
 };
 
 module.exports = Controller;
