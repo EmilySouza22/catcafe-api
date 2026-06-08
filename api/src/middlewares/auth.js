@@ -1,31 +1,21 @@
-const Middleware = {};
+//autenticando o usuario
+const { verificarTokenAcesso } = require('../utils/jwt');
 
-// TODO: implementar middleware de autenticação JWT
-Middleware.authenticateToken = (req, res, next) => {
-	const token = req.headers['authorization'];
+const Auth = (req, res, next) => {
+    const authHeader = req.headers['authorization'];
+    const token = authHeader && authHeader.split(' ')[1]; // Bearer <token>
 
-	if (!token) {
-		return res.status(401).json({
-			success: false,
-			message: 'Token não fornecido',
-		});
-	}
+    if (!token) {
+        return res.status(401).json({ success: false, message: 'Token não fornecido' });
+    }
 
-	// Validar token 
-	next();
+    try {
+        const payload = verificarTokenAcesso(token);
+        req.user = payload;
+        next();
+    } catch (error) {
+        return res.status(403).json({ success: false, message: 'Token inválido ou expirado' });
+    }
 };
 
-// TODO: implementar middleware de autorização admin
-Middleware.authorizeAdmin = (req, res, next) => {
-	// verificar se o usuário tem role ADMIN
-	if (req.auth && req.auth.role === 'ADMIN') {
-		next();
-	} else {
-		return res.status(403).json({
-			success: false,
-			message: 'Acesso não autorizado',
-		});
-	}
-};
-
-module.exports = Middleware;
+module.exports = Auth;

@@ -1,23 +1,9 @@
 const express = require('express');
 const router = express.Router();
+const { handleRegister, handleLogin, handleLogout } = require('../controllers/auth');
 
-//controller
-const {
-	handleRegister,
-	handleLogin,
-	handleLogout,
-} = require('../controllers/auth.js');
-
-router.post('/register', async (req, res) => {
-	await handleRegister(req, res);
-});
-
-router.post('/login', async (req, res) => {
-	await handleLogin(req, res);
-});
-
-router.post('/logout', async (req, res) => {
-	await handleLogout(req, res);
-});
+router.post('/register', handleRegister);
+router.post('/login', handleLogin);
+router.post('/logout', handleLogout);
 
 module.exports = router;
