@@ -1,5 +1,13 @@
-const Middleware = {};
+const verificarOwnership = (req, res, next) => {
+    const { id } = req.params;
 
-// TODO:  middlewares de usuário 
+    if (req.user.role === 'admin') return next();
 
-module.exports = Middleware;
+    if (req.user.id !== parseInt(id)) {
+        return res.status(403).json({ success: false, message: 'Acesso negado' });
+    }
+
+    next();
+};
+
+module.exports = { verificarOwnership };
