@@ -1,0 +1,12 @@
+{
+  "dependencies": {
+    "env": "^0.0.2",
+    "jsonwebtoken": "^9.0.3",
+    "vite": "^8.0.10"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.60.0",
+    "@types/node": "^25.7.0"
+  },
+  "scripts": {}
+}
