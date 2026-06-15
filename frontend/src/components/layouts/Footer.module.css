@@ -1,0 +1,137 @@
+/* Footer — Black Cat & Coffee */
+
+.footer {
+  background: var(--color-cream);
+  border-top: 1px solid rgba(0,0,0,0.07);
+}
+
+.inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 3.5rem 2rem 2rem;
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1.4fr 1fr;
+  gap: 2.5rem;
+}
+
+/* Logo */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  text-decoration: none;
+  margin-bottom: 0.9rem;
+}
+
+.logoText {
+  font-family: var(--font-body);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  line-height: 1.4;
+  color: var(--color-black);
+  text-transform: uppercase;
+}
+
+.tagline {
+  font-size: 0.82rem;
+  color: var(--color-muted);
+  line-height: 1.5;
+}
+
+/* Column title */
+.colTitle {
+  font-family: var(--font-body);
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--color-dark);
+  margin-bottom: 1.1rem;
+}
+
+/* Links list */
+.linkList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.linkList li a {
+  font-size: 0.86rem;
+  color: var(--color-muted);
+  text-decoration: none;
+  transition: color 0.18s ease;
+}
+
+.linkList li a:hover {
+  color: var(--color-black);
+}
+
+/* Info */
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.info p {
+  font-size: 0.86rem;
+  color: var(--color-muted);
+  line-height: 1.65;
+}
+
+/* Social icons */
+.social {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.socialBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  color: var(--color-dark);
+  text-decoration: none;
+  border-radius: 50%;
+  transition: color 0.18s ease, background 0.18s ease;
+}
+
+.socialBtn:hover {
+  color: var(--color-black);
+  background: rgba(0,0,0,0.06);
+}
+
+/* Bottom bar */
+.bottom {
+  border-top: 1px solid rgba(0,0,0,0.07);
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1.25rem 2rem;
+}
+
+.bottom p {
+  font-size: 0.75rem;
+  color: var(--color-muted);
+  text-align: center;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .inner {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .inner {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
