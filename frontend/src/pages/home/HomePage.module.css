@@ -1,0 +1,250 @@
+/* ══════════════════════════════════════════
+   HOME PAGE — Black Cat & Coffee
+   ══════════════════════════════════════════ */
+
+.page {
+  display: flex;
+  flex-direction: column;
+  background: var(--color-cream);
+}
+
+.eyebrow {
+  font-family: var(--font-body);
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-dark);
+  margin-bottom: 1rem;
+}
+
+/* ── HERO ── */
+.hero {
+  width: 100%;
+  line-height: 0;
+}
+
+.heroImg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ── SOBRE NÓS ── */
+.sobre {
+  display: grid;
+  grid-template-columns: 48% 1fr;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 5rem 2rem;
+  align-items: center;
+  gap: 4rem;
+  width: 100%;
+}
+
+.sobreImgWrap {
+  border-radius: 12px;
+  overflow: hidden;
+  aspect-ratio: 4 / 3;
+}
+
+.sobreImgWrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.sobreContent {
+  display: flex;
+  flex-direction: column;
+}
+
+.sobreHeading {
+  font-family: var(--font-display);
+  font-size: clamp(1.9rem, 3vw, 2.6rem);
+  font-weight: 700;
+  line-height: 1.18;
+  color: var(--color-black);
+  margin-bottom: 1.1rem;
+}
+
+.sobreDesc {
+  font-size: 0.88rem;
+  color: var(--color-muted);
+  line-height: 1.75;
+  max-width: 320px;
+}
+
+.linkArrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-black);
+  margin-top: 1.75rem;
+  transition: gap 0.2s ease;
+}
+
+.linkArrow:hover {
+  gap: 0.9rem;
+}
+
+/* ── 4 CARDS ── */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  background: var(--color-cream);
+  border-top: 1px solid rgba(0,0,0,0.07);
+  border-bottom: 1px solid rgba(0,0,0,0.07);
+}
+
+.card {
+  padding: 2.75rem 1.5rem 2.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 0.75rem;
+  border-right: 1px solid rgba(0,0,0,0.07);
+  transition: background 0.2s ease;
+  cursor: pointer;
+  text-decoration: none;
+  color: inherit;
+}
+
+.card:last-child {
+  border-right: none;
+}
+
+.card:hover {
+  background: var(--color-cream-dark);
+}
+
+.cardTitle {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-black);
+  margin-top: 0.5rem;
+}
+
+.cardDesc {
+  font-size: 0.83rem;
+  color: var(--color-muted);
+  line-height: 1.55;
+  max-width: 180px;
+}
+
+/* ── BANNER ESCURO ── */
+.bannerWrap {
+  padding: 3.5rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.banner {
+  background: #1A1A1A;
+  border-radius: 18px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  overflow: hidden;
+  min-height: 200px;
+  align-items: stretch;
+}
+
+.bannerContent {
+  padding: 3rem 3rem 3rem 3.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.bannerHeading {
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 2.5vw, 2.1rem);
+  font-weight: 700;
+  line-height: 1.25;
+  color: #FFFFFF;
+}
+
+.bannerCta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  text-decoration: none;
+  transition: gap 0.2s ease;
+}
+
+.bannerCta:hover {
+  gap: 0.9rem;
+}
+
+.bannerPhoto {
+  width: 340px;
+  overflow: hidden;
+}
+
+.bannerPhoto img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ── RESPONSIVO ── */
+@media (max-width: 900px) {
+  .sobre {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding: 3rem 1.5rem;
+  }
+
+  .cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .card:nth-child(2) { border-right: none; }
+  .card:nth-child(1),
+  .card:nth-child(2) { border-bottom: 1px solid rgba(0,0,0,0.07); }
+
+  .banner {
+    grid-template-columns: 1fr;
+  }
+
+  .bannerPhoto {
+    width: 100%;
+    height: 220px;
+  }
+
+  .bannerContent {
+    padding: 2rem 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
+
+  .card {
+    border-right: none;
+    border-bottom: 1px solid rgba(0,0,0,0.07);
+  }
+
+  .card:last-child {
+    border-bottom: none;
+  }
+}
