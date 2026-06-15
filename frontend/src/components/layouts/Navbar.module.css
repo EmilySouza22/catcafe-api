@@ -1,0 +1,141 @@
+/* Navbar — Black Cat & Coffee */
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--color-cream);
+  border-bottom: 1px solid rgba(0,0,0,0.07);
+}
+
+.nav {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+/* Logo */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  text-decoration: none;
+  flex-shrink: 0;
+  height: 100%;
+  width: 230px;
+}
+
+.logoText {
+  font-family: var(--font-body);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  line-height: 1.4;
+  color: var(--color-black);
+  text-transform: uppercase;
+}
+
+/* Nav links */
+.links {
+  display: flex;
+  align-items: center;
+  gap: 2.25rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.link {
+  font-family: var(--font-body);
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-dark);
+  text-decoration: none;
+  transition: color 0.18s ease;
+}
+
+.link:hover {
+  color: var(--color-black);
+}
+
+.linkActive {
+  color: var(--color-black);
+  font-weight: 600;
+}
+
+/* Actions */
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-shrink: 0;
+}
+
+.iconBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  color: var(--color-dark);
+  text-decoration: none;
+  border: none;
+  background: none;
+  cursor: pointer;
+  border-radius: 50%;
+  transition: color 0.18s ease, background 0.18s ease;
+  padding: 0;
+}
+
+.iconBtn:hover {
+  color: var(--color-black);
+  background: rgba(0,0,0,0.05);
+}
+
+/* Hamburguer */
+.menuBtn {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 4px;
+  width: 32px;
+  height: 32px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 6px 4px;
+  border-radius: 4px;
+  transition: background 0.18s ease;
+}
+
+.menuBtn:hover {
+  background: rgba(0,0,0,0.05);
+}
+
+.menuBtn span {
+  display: block;
+  height: 1.5px;
+  background: var(--color-dark);
+  border-radius: 2px;
+}
+
+.menuBtn span:first-child { width: 100%; }
+.menuBtn span:nth-child(2) { width: 80%; }
+.menuBtn span:last-child { width: 60%; }
+
+@media (max-width: 768px) {
+  .links {
+    display: none;
+  }
+
+  .nav {
+    padding: 0 1.25rem;
+  }
+}
