@@ -7,9 +7,8 @@ const CatLogo = () => (
 
 const NAV_LINKS = [
   { to: '/sobre',    label: 'SOBRE' },
-  { to: '/gatos',   label: 'GATOS' },
+  { to: '/adocao',   label: 'ADOÇÃO' },
   { to: '/cardapio', label: 'CARDÁPIO' },
-  { to: '/eventos', label: 'EVENTOS' },
   { to: '/contato', label: 'CONTATO' },
 ];
 
@@ -39,10 +38,9 @@ export default function Navbar() {
           ))}
         </ul>
 
-        {/* Ícones sociais + menu */}
         <div className={styles.actions}>
           <button className={styles.menuBtn} aria-label="Menu">
-            <span /><span /><span />
+            <img src="/icon_menu.png" alt="ícone de menu" />
           </button>
         </div>
 

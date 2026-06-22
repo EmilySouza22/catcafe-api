@@ -33,11 +33,7 @@
   text-transform: uppercase;
 }
 
-.tagline {
-  font-size: 0.82rem;
-  color: var(--color-muted);
-  line-height: 1.5;
-}
+
 
 /* Column title */
 .colTitle {

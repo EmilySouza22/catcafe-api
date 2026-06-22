@@ -1,7 +1,12 @@
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
 import Navbar from './components/layouts/Navbar';
-import Footer from '../src/components/layouts/Footer';
-import HomePage from '../src/pages/Home/HomePage';
+import Footer from './components/layouts/Footer';
+import HomePage from './pages/Home/HomePage';
+import GatosPage from './pages/Gatos/GatosPage';
+import CardapioPage from './pages/Cardapio/CardapioPage';
+import SobrePage from './pages/Sobre/SobrePage';
+import ContactPage from './pages/Contact/ContactPage';
+import AdocaoPage from './pages/adoption/AdocaoPage';
 import './styles/global.css';
 
 function PlaceholderPage({ title }) {
@@ -16,21 +21,24 @@ function PlaceholderPage({ title }) {
 export default function App() {
   return (
     <BrowserRouter>
-      <Navbar />
-      <Routes>
-        <Route path="/"        element={<Navigate to="/home" replace />} />
-        <Route path="/home"    element={<HomePage />} />
-        <Route path="/sobre"   element={<PlaceholderPage title="Sobre Nós" />} />
-        <Route path="/gatos"   element={<PlaceholderPage title="Nossos Gatos" />} />
-        <Route path="/cardapio" element={<PlaceholderPage title="Cardápio" />} />
-        <Route path="/eventos" element={<PlaceholderPage title="Eventos" />} />
-        <Route path="/adocao"  element={<PlaceholderPage title="Adoção" />} />
-        <Route path="/gatil"   element={<PlaceholderPage title="Taxa de Visitação" />} />
-        <Route path="/contato" element={<PlaceholderPage title="Contato" />} />
-        <Route path="/login"   element={<PlaceholderPage title="Login" />} />
-        <Route path="/register" element={<PlaceholderPage title="Cadastro" />} />
-      </Routes>
-      <Footer />
+      <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
+        <Navbar />
+        <main style={{ flex: 1 }}>
+          <Routes>
+            <Route path="/"         element={<Navigate to="/home" replace />} />
+            <Route path="/home"     element={<HomePage />} />
+            <Route path="/sobre" element={<SobrePage />} />
+            <Route path="/gatos" element={<GatosPage />} />
+            <Route path="/cardapio" element={<CardapioPage />} />
+            <Route path="/adocao" element={<AdocaoPage />} />
+            <Route path="/gatil"    element={<PlaceholderPage title="Taxa de Visitação" />} />
+            <Route path="/contato"  element={<ContactPage />} />
+            <Route path="/login"    element={<PlaceholderPage title="Login" />} />
+            <Route path="/register" element={<PlaceholderPage title="Cadastro" />} />
+          </Routes>
+        </main>
+        <Footer />
+      </div>
     </BrowserRouter>
   );
 }

@@ -33,19 +33,19 @@
 /* ── SOBRE NÓS ── */
 .sobre {
   display: grid;
-  grid-template-columns: 48% 1fr;
+  grid-template-columns: 60% 1fr;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 5rem 2rem;
+  padding: 6rem 2rem;
   align-items: center;
-  gap: 4rem;
+  gap: 5rem;
   width: 100%;
 }
 
 .sobreImgWrap {
   border-radius: 12px;
   overflow: hidden;
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 5 / 3;
 }
 
 .sobreImgWrap img {
@@ -193,8 +193,9 @@
 }
 
 .bannerPhoto {
-  width: 340px;
+  width: 100%;
   overflow: hidden;
+  cursor: pointer;
 }
 
 .bannerPhoto img {

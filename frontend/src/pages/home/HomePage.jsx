@@ -2,7 +2,6 @@ import { Link } from 'react-router-dom';
 import styles from './HomePage.module.css';
 
 const IMG = {
-  sobreNos: 'https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?w=900&q=80',
   banner: 'https://images.unsplash.com/photo-1533738363-b7f9aef128ce?w=900&q=80',
 };
 
@@ -55,7 +54,7 @@ export default function HomePage() {
       {/* ── SOBRE NÓS ── */}
       <section className={styles.sobre}>
         <div className={styles.sobreImgWrap}>
-          <img src={IMG.sobreNos} alt="Interior do Black Cat & Coffee" />
+          <img src="/imagem_ambiente_home.png" alt="Interior do Black Cat & Coffee" />
         </div>
         <div className={styles.sobreContent}>
           <p className={styles.eyebrow}>SOBRE NÓS</p>
@@ -82,20 +81,13 @@ export default function HomePage() {
         ))}
       </section>
 
-      {/* ── BANNER ESCURO ── */}
+      {/* BANNER VENHA_NOS_VISITAR */}
       <section className={styles.bannerWrap}>
-        <div className={styles.banner}>
-          <div className={styles.bannerContent}>
-            <h2 className={styles.bannerHeading}>
-              Uma experiência única<br />
-              espera por você.
-            </h2>
-            <Link to="/sobre" className={styles.bannerCta}>VENHA NOS VISITAR →</Link>
-          </div>
           <div className={styles.bannerPhoto}>
-            <img src={IMG.banner} alt="Gato preto relaxando" />
+            <Link to="/contato" className={styles.linkArrow}>
+              <img src="/image_experience_catcafe.png" alt="Gato preto deitado olhando para a tela" />
+            </Link>
           </div>
-        </div>
       </section>
 
     </main>

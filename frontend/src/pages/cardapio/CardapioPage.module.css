@@ -1,0 +1,247 @@
+/* ══════════════════════════════════════════
+   CARDÁPIO PAGE
+   ══════════════════════════════════════════ */
+
+.page {
+  background: var(--color-cream);
+  min-height: 100vh;
+  font-family: var(--font-body);
+}
+
+/* ── HERO ── */
+.hero {
+  width: 100%;
+  line-height: 0;
+}
+
+.heroBanner {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+.abas {
+  display: flex;
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.aba {
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  color: var(--color-muted);
+  background: none;
+  border: none;
+  padding: 1rem 1.5rem;
+  padding-top: 5%;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -1px;
+  transition: color 0.18s ease, border-color 0.18s ease;
+  white-space: nowrap;
+}
+
+.aba:hover {
+  color: var(--color-black);
+}
+
+.abaAtiva {
+  color: var(--color-black);
+  font-weight: 700;
+  border-bottom-color: var(--color-black);
+}
+
+/* ── SECTION ── */
+.section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 3rem 2rem;
+  border-bottom: 1px solid rgba(0,0,0,0.07);
+}
+
+.section:last-child {
+  border-bottom: none;
+}
+
+.sectionHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+}
+
+.sectionTitle {
+  font-family: var(--font-body);
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--color-black);
+  margin-bottom: 0.4rem;
+}
+
+.sectionDesc {
+  font-size: 0.88rem;
+  color: var(--color-muted);
+  line-height: 1.5;
+  max-width: 280px;
+}
+
+.btnOutline {
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  color: var(--color-black);
+  background: none;
+  border: 1px solid rgba(0,0,0,0.2);
+  padding: 0.6rem 1.25rem;
+  cursor: pointer;
+  border-radius: 3px;
+  transition: background 0.18s ease;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.btnOutline:hover {
+  background: rgba(0,0,0,0.05);
+}
+
+/* ── GRID DE CARDS ── */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  background: var(--color-cream);
+}
+
+.cardImg {
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  background: #e8e0d4;
+  margin-bottom: 0.75rem;
+}
+
+.cardImg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.card:hover .cardImg img {
+  transform: scale(1.04);
+}
+
+.cardBody {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.cardTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 0.5rem;
+}
+
+.cardNome {
+  font-family: var(--font-body);
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: var(--color-black);
+}
+
+.cardPreco {
+  font-family: var(--font-body);
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--color-black);
+  white-space: nowrap;
+}
+
+.cardDesc {
+  font-size: 0.82rem;
+  color: var(--color-muted);
+  line-height: 1.55;
+}
+
+/* ── VER TODOS ── */
+.verTodos {
+  display: flex;
+  justify-content: center;
+  margin-top: 2.5rem;
+}
+
+.btnOutlineLg {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  color: var(--color-black);
+  background: none;
+  border: 1px solid rgba(0,0,0,0.25);
+  padding: 0.85rem 2rem;
+  cursor: pointer;
+  border-radius: 3px;
+  transition: background 0.18s ease;
+}
+
+.btnOutlineLg:hover {
+  background: rgba(0,0,0,0.05);
+}
+
+/* ── RESPONSIVO ── */
+@media (max-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    grid-template-columns: 1fr;
+    padding: 2rem 1.5rem 1.5rem;
+  }
+
+  .heroImg {
+    justify-content: center;
+  }
+
+  .heroImg img {
+    max-height: 200px;
+  }
+
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .sectionHeader {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .abas {
+    padding: 0 1rem;
+  }
+
+  .section {
+    padding: 2rem 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}

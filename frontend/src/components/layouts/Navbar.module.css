@@ -12,7 +12,7 @@
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 2rem;
-  height: 64px;
+  height: 74px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -27,7 +27,7 @@
   text-decoration: none;
   flex-shrink: 0;
   height: 100%;
-  width: 230px;
+  width: 210px;
 }
 
 .logoText {
@@ -52,7 +52,7 @@
 
 .link {
   font-family: var(--font-body);
-  font-size: 0.68rem;
+  font-size: 0.90rem;
   font-weight: 500;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -104,9 +104,8 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 4px;
-  width: 32px;
-  height: 32px;
+  width: 55px;
+  height: 55px;
   background: none;
   border: none;
   cursor: pointer;

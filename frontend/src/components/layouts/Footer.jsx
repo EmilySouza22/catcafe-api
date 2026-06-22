@@ -36,7 +36,6 @@ export default function Footer() {
           <Link to="/home" className={styles.logo}>
             <CatLogo />
           </Link>
-          <p className={styles.tagline}>Café, gatos e boas histórias.</p>
         </div>
 
         {/* Coluna 2: Links */}
@@ -79,7 +78,7 @@ export default function Footer() {
       </div>
 
       <div className={styles.bottom}>
-        <p>© 2024 Black Cat &amp; Coffee. Todos os direitos reservados.</p>
+        <p>© 2026 Black Cat &amp; Coffee. Todos os direitos reservados.</p>
       </div>
     </footer>
   );
