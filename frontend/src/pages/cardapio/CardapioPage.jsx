@@ -10,7 +10,12 @@ const MENU = {
       { nome: "Cappuccino", preco: "R$ 12,00", img: "/image_capuccino.png", desc: "Leve e cremoso, com espresso, leite vaporizado e toque de cacau." },
       { nome: "Cold Brew",  preco: "R$ 14,00", img: "/image_cold_brew.png", desc: "Extração a frio que resulta em um café leve, suave e refrescante." },
       { nome: "Latte",      preco: "R$ 13,00", img: "/image_latte.png",     desc: "Espresso com leite vaporizado. Suave, cremoso e reconfortante." },
+      { nome: "Mocha",      preco: "R$ 15,00", img: "",                     desc: "Combinação perfeita de espresso, chocolate e leite vaporizado." },
+      { nome: "Macchiato",  preco: "R$ 10,00", img: "",                     desc: "Espresso marcado com uma pitada de espuma de leite." },
+      { nome: "Flat White", preco: "R$ 13,00", img: "",                     desc: "Espresso duplo com leite vaporizado sedoso e delicado." },
+      { nome: "Affogato",   preco: "R$ 16,00", img: "",                     desc: "Sorvete de baunilha afogado em espresso quente." },
     ],
+  },
   bebidas: {
     label: "Bebidas",
     descricao: "Refrescantes e saborosas, para qualquer hora do dia.",

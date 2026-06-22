@@ -65,7 +65,7 @@ const CATS = [
     fivFelv: 'Negativo',
     personality: ['Tranquila', 'Carinhosa', 'Observadora'],
     description: 'Luna é uma gata serena que adora observar o mundo do alto. Ela escolhe com cuidado em quem confiar, mas quando te adota de verdade, nunca mais larga.',
-    image: '',
+    image: '/luna_photo.png',
   },
   {
     id: 2,
@@ -77,7 +77,7 @@ const CATS = [
     fivFelv: 'Negativo',
     personality: ['Brincalhão', 'Curioso', 'Energético'],
     description: 'Salem chegou pequeninho e já dominou o espaço. Ama brincar, investigar cada canto e te acordar às 6h da manhã com muito amor (e barulho).',
-    image: '',
+    image: '/salem_photo.png',
   },
   {
     id: 3,
@@ -89,7 +89,7 @@ const CATS = [
     fivFelv: 'Negativo',
     personality: ['Independente', 'Gentil', 'Companheiro'],
     description: 'Nox é o tipo de gato que fica do seu lado sem pedir atenção o tempo todo. Discreto, mas sempre presente — aparece exatamente quando você precisa.',
-    image: '',
+    image: '/nox_photo.png',
   },
   {
     id: 4,
@@ -101,7 +101,7 @@ const CATS = [
     fivFelv: 'Positivo',
     personality: ['Dócil', 'Corajosa', 'Afetiva'],
     description: 'Pandora vive com FIV/FELV positivo, mas isso não diminui nem um pouco seu amor pela vida. Ela precisa de um lar tranquilo e te dará amor incondicional em troca.',
-    image: '',
+    image: '/pandora_photo.png',
   },
   {
     id: 5,
@@ -113,7 +113,7 @@ const CATS = [
     fivFelv: 'Negativo',
     personality: ['Agitada', 'Sociável', 'Travessa'],
     description: 'Mochi ainda está descobrindo o mundo e quer fazer isso do seu lado. Filhote cheia de energia, perfeita para quem quer crescer junto com ela.',
-    image: '',
+    image: '/mochi_photo.png',
   },
   {
     id: 6,
@@ -125,31 +125,7 @@ const CATS = [
     fivFelv: 'Negativo',
     personality: ['Reservado', 'Leal', 'Calmo'],
     description: 'Bruxo parece sério à primeira vista, mas quem conquista sua confiança ganha um amigo para a vida inteira. Ama silêncio, cobertor e uma boa tarde de domingo.',
-    image: '',
-  },
-  {
-    id: 7,
-    name: 'Vesper',
-    gender: 'f',
-    age: '1 ano',
-    vaccinated: true,
-    castrated: true,
-    fivFelv: 'Negativo',
-    personality: ['Elegante', 'Inteligente', 'Teimosa'],
-    description: 'Vesper sabe exatamente o que quer e não tem problema nenhum em te avisar. Inteligente e comunicativa, vai te treinar para ser o tutor perfeito em poucos dias.',
-    image: '',
-  },
-  {
-    id: 8,
-    name: 'Sombra',
-    gender: 'm',
-    age: '5 anos',
-    vaccinated: true,
-    castrated: true,
-    fivFelv: 'Negativo',
-    personality: ['Maduro', 'Paciente', 'Amoroso'],
-    description: 'Sombra já passou da fase de destruir cortinas. Adulto e tranquilo, é ideal para um lar mais calmo. Adora colo, sol da janela e nada de barulho após as 21h.',
-    image: '',
+    image: '/bruxo_photo.png',
   },
 ];
 
@@ -161,7 +137,7 @@ export default function GatosPage() {
       <section className={styles.header}>
         <div className={styles.container}>
           <span className={styles.label}>Gatinhos</span>
-          <h1 className={styles.title}>Conheça nossos gatos</h1>
+          <h1 className={styles.title}>Conheça nossos gatos!</h1>
           <p className={styles.subtitle}>
             Cada um com sua própria história e jeito de amar.
             Encontre aquele que combina com você.
