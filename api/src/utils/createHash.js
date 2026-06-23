@@ -1,11 +1,7 @@
 const bcrypt = require('bcrypt');
 
-const Utils = {};
+const SALT_ROUNDS = 12;
 
-Utils.createHash = async (senha) => {
-    const saltRounds = 10
-    const hash = await bcrypt.hash(senha, saltRounds)
-    return hash
-}
+const createHash = async (plainText) => bcrypt.hash(plainText, SALT_ROUNDS);
 
-module.exports = Utils;
+module.exports = { createHash };

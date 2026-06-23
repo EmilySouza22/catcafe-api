@@ -6,73 +6,54 @@ Validator.validateRegister = (user) => {
 		Validator.validateEmail(user.email);
 		Validator.validatePassword(user.password);
 		Validator.validatePhone(user.phone);
-		return { valid: true, message: null };
-	} catch (error) {
-		return { valid: false, message: error.message };
+		return true;
+	} catch {
+		return false;
 	}
 };
 
 Validator.validateName = (name) => {
-	//Se a string é vazia
-	if (!name) {
-		throw new Error('The name cannot remain empty');
-	}
-
-	//Se o nome possui formato de string
-	if (typeof name !== 'string') {
-		throw new Error('The name must be a string');
-	}
-
-	//Se o nome possui números
-	for (let char of name) {
-		if (char >= '0' && char <= '9') {
-			throw new Error('The name cannot contain numbers.');
-		}
-	}
-
-	//Validação se o nome possui caracteres especiais
-	const specialCharacters = '!@#$%^&*()_+-=[]{}|;:,.<>?/\\~`';
-	for (let char of name) {
-		if (specialCharacters.includes(char)) {
-			throw new Error('The name cannot contain special characters');
-		}
-	}
+	if (!name || typeof name !== 'string')
+		throw new Error('Name must be a non-empty string');
+	if (/[0-9]/.test(name)) throw new Error('Name cannot contain numbers');
+	if (/[!@#$%^&*()_+\-=\[\]{}|;:,.<>?/\\~`]/.test(name))
+		throw new Error('Name cannot contain special characters');
 };
 
 Validator.validateEmail = (email) => {
-	//Se a string é vazia
-	if (!email) {
-		throw new Error('The email cannot remain empty');
-	}
-
-	if (email) {
-		let containsAt = 0;
-
-		for (let char of email) {
-			if (char === '@') {
-				containsAt++;
-			}
-		}
-
-		if (containsAt === 0 || containsAt > 1) {
-			throw new Error('The email cannot remain empty');
-		}
-	}
-	return email;
+	if (!email || typeof email !== 'string')
+		throw new Error('Email must be a non-empty string');
+	if (/\s/.test(email)) throw new Error('Email cannot contain spaces');
+	const atCount = (email.match(/@/g) || []).length;
+	if (atCount !== 1) throw new Error('Email must contain exactly one @');
+	if (/[^a-zA-Z0-9@._+-]/.test(email))
+		throw new Error('Email contains invalid characters');
+	const [local, domain] = email.split('@');
+	if (!local || !domain || !domain.includes('.'))
+		throw new Error('Invalid email format');
 };
 
 Validator.validatePassword = (password) => {
-	//Se a string é vazia
-	if (!password) {
-		throw new Error('The email cannot remain empty');
-	}
+	if (!password || typeof password !== 'string')
+		throw new Error('Password must be a non-empty string');
+	if (password.length < 8)
+		throw new Error('Password must be at least 8 characters');
+	if (password.length > 255)
+		throw new Error('Password must be at most 255 characters');
+	if (!/[A-Z]/.test(password))
+		throw new Error('Password must contain at least one uppercase letter');
+	if (!/[a-z]/.test(password))
+		throw new Error('Password must contain at least one lowercase letter');
+	if (!/[0-9]/.test(password))
+		throw new Error('Password must contain at least one number');
 };
 
 Validator.validatePhone = (phone) => {
-	//Se a string é vazia
-	if (!phone) {
-		throw new Error('The phone cannot remain empty');
-	}
+	if (!phone || typeof phone !== 'string')
+		throw new Error('Phone must be a non-empty string');
+	if (/\s/.test(phone)) throw new Error('Phone cannot contain spaces');
+	if (/[^0-9]/.test(phone)) throw new Error('Phone must contain only digits');
+	if (phone.length > 20) throw new Error('Phone must be at most 20 characters');
 };
 
 module.exports = Validator;

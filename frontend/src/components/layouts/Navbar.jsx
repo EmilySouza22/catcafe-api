@@ -37,13 +37,6 @@ export default function Navbar() {
             </li>
           ))}
         </ul>
-
-        <div className={styles.actions}>
-          <button className={styles.menuBtn} aria-label="Menu">
-            <img src="/icon_menu.png" alt="ícone de menu" />
-          </button>
-        </div>
-
       </nav>
     </header>
   );

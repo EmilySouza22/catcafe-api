@@ -1,18 +1,20 @@
 const express = require('express');
 const router = express.Router();
-const { handleGetProfile, handleUpdateProfile, handleDeleteAccount } = require('../controllers/user');
-const autenticar = require('../middlewares/autenticar');
-const autorizarAdmin = require('../middlewares/autorizarAdmin');
+const {
+	handleGetProfile,
+	handleUpdateProfile,
+	handleDeleteAccount,
+} = require('../controllers/user');
 const Auth = require('../middlewares/auth');
+const AuthAdmin = require('../middlewares/admin');
+const { verificarOwnership } = require('../middlewares/user');
 
-//usuario acessar o proprio perfil
-router.get('/profile/:id', Auth, handleGetProfile);
-router.put('/profile/:id', Auth, handleUpdateProfile);
-router.delete('/account/:id', Auth, handleDeleteAccount);
+router.get('/profile/:id', Auth, verificarOwnership, handleGetProfile);
+router.put('/profile/:id', Auth, verificarOwnership, handleUpdateProfile);
+router.delete('/account/:id', Auth, verificarOwnership, handleDeleteAccount);
 
-// admin passe livre pra acesso
-router.get('/admin/profile/:id', Auth, autorizarAdmin, handleGetProfile);
-router.put('/admin/profile/:id', Auth, autorizarAdmin, handleUpdateProfile);
-router.delete('/admin/account/:id', Auth, autorizarAdmin, handleDeleteAccount);
+router.get('/admin/profile/:id', Auth, AuthAdmin, handleGetProfile);
+router.put('/admin/profile/:id', Auth, AuthAdmin, handleUpdateProfile);
+router.delete('/admin/account/:id', Auth, AuthAdmin, handleDeleteAccount);
 
 module.exports = router;

@@ -1,10 +1,6 @@
 import { Link } from 'react-router-dom';
 import styles from './HomePage.module.css';
 
-const IMG = {
-  banner: 'https://images.unsplash.com/photo-1533738363-b7f9aef128ce?w=900&q=80',
-};
-
 const IconCup = () => (
   <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
     <path d="M18 8 C18 6 20 5 20 7" stroke="#1A1A1A" strokeWidth="1.5" strokeLinecap="round" fill="none"/>
