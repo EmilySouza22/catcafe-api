@@ -51,10 +51,6 @@ function Layout() {
 					<Route path="/gatos" element={<GatosPage />} />
 					<Route path="/cardapio" element={<CardapioPage />} />
 					<Route path="/adocao" element={<AdocaoPage />} />
-					<Route
-						path="/gatil"
-						element={<PlaceholderPage title="Taxa de Visitação" />}
-					/>
 					<Route path="/contato" element={<ContactPage />} />
 					<Route path="/login" element={<LoginPage />} />
 					<Route path="/register" element={<RegisterPage />} />

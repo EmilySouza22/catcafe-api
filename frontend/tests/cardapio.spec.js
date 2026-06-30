@@ -51,7 +51,7 @@ test.describe('CardapioPage', () => {
 		test('deve renderizar pelo menos um card na categoria ativa', async ({
 			page,
 		}) => {
-			await expect(page.getByText('Espresso')).toBeVisible();
+			await expect(page.getByText('Espresso').first()).toBeVisible();
 			await expect(page.getByText('R$ 8,00').first()).toBeVisible();
 		});
 

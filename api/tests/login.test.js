@@ -1,10 +1,9 @@
+jest.mock('../src/repositories/user');
+const UserRepository = require('../src/repositories/user');
+const app = require('../app');
+
 const request = require('supertest');
 const bcrypt = require('bcrypt');
-
-jest.mock('../api/src/repositories/user');
-const UserRepository = require('../api/src/repositories/user');
-
-const app = require('../api/app');
 
 const HASHED_ADMIN = bcrypt.hashSync('Admin123', 10);
 
